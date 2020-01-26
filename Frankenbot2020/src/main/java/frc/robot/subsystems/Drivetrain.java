@@ -11,12 +11,7 @@
 
 package frc.robot.subsystems;
 
-import frc.robot.Robot;
-
-import com.analog.adis16448.frc.ADIS16448_IMU;
-
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -40,8 +35,8 @@ public DifferentialDrive westCoastTankDrive;
 public Joystick Joystick = new Joystick(0);
 //public Joystick joystick2;
 
-private static final double kAngleSetpoint = 0.0;
-private static final double kP = 0.005; // propotional turning constant
+//private static final double kAngleSetpoint = 0.0;
+//private static final double kP = 0.005; // propotional turning constant
 
 
 //The gain for a simple P Loop
