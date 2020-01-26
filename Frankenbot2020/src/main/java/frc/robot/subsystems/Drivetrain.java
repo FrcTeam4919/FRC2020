@@ -37,8 +37,8 @@ public class Drivetrain extends Subsystem {
 private VictorSP left;
 private VictorSP right;
 public DifferentialDrive westCoastTankDrive;
-public Joystick joystick;
-public Joystick joystick2;
+public Joystick Joystick = new Joystick(0);
+//public Joystick joystick2;
 
 private static final double kAngleSetpoint = 0.0;
 private static final double kP = 0.005; // propotional turning constant
@@ -81,21 +81,18 @@ private static final double kP = 0.005; // propotional turning constant
         // Set the default command for a subsystem here.
         // setDefaultCommand(new MySpecialCommand());
     }
-
     @Override
     public void periodic() {
         // Put code here to be run every loop
-        joystick2 = new Joystick(1);
-        Joystick joystick2 = Robot.oi.getRightJoystick();
 
-        double y = joystick2.getY();
-        double x = joystick2.getX();
-        double z = joystick2.getZ();
+        double y = Joystick.getY();
+        double x = Joystick.getX();
+        double z = Joystick.getZ();
         y = correctErrors(y);
         x = correctErrors(x);
         z  = correctErrors(z);
 
-        //westCoastTankDrive.arcadeDrive(x, -y);
+        westCoastTankDrive.arcadeDrive(x, -y);
     }
 
     public double correctErrors(double value) {
