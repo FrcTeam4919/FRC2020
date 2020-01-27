@@ -11,6 +11,7 @@
 
 package frc.robot.subsystems;
 
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -33,6 +34,7 @@ private VictorSP left;
 private VictorSP right;
 public DifferentialDrive westCoastTankDrive;
 public Joystick Joystick = new Joystick(0);
+private static final double kP = 0.005;
 //public Joystick joystick2;
 
 //private static final double kAngleSetpoint = 0.0;
@@ -86,8 +88,10 @@ public Joystick Joystick = new Joystick(0);
         y = correctErrors(y);
         x = correctErrors(x);
         z  = correctErrors(z);
+        double error = -imu.getRate();
 
-        westCoastTankDrive.arcadeDrive(x, -y);
+        //drivetrain.westCoastTankDrive.arcadeDrive(.5 + kP * error, .5 - kP * error);
+        westCoastTankDrive.arcadeDrive(x + kp * error, -y - kP * error);
     }
 
     public double correctErrors(double value) {
