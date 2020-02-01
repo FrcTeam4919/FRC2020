@@ -50,7 +50,7 @@ public class Robot extends TimedRobot {
     Command autonomousCommand;
     SendableChooser<Command> chooser = new SendableChooser<>();
     public static final ADIS16448_IMU imu = new ADIS16448_IMU();
-    private static final double kAngleSetpoint = 0.0;
+     //private static final double kAngleSetpoint = 0.0;
      // propotional turning constant
     
     public static OI oi;
