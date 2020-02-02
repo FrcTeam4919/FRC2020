@@ -89,10 +89,10 @@ public static final double kAngleSetpoint = 0.0;
         x = correctErrors(x);
         z  = correctErrors(z);
         //double error = -Robot.imu.getRate();
-        System.out.println("Driving the Joystick");
+        //System.out.println("Driving the Joystick");
 
         //drivetrain.westCoastTankDrive.arcadeDrive(.5 + kP * error, .5 - kP * error);
-        westCoastTankDrive.arcadeDrive(-x, -y);
+        //westCoastTankDrive.arcadeDrive(-x, -y);
     }
 
     public double correctErrors(double value) {

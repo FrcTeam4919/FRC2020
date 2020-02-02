@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AutonomousCommand;
 import frc.robot.commands.GyroDriveStabilization;
 import frc.robot.commands.Reset;
+import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
 
@@ -58,7 +59,6 @@ public class OI {
         joystick = new Joystick(0);
         
         gyroStabilization = new JoystickButton(joystick, 1);
-        gyroStabilization.(Stabilize = true);
         gyroStabilization.whileHeld(new GyroDriveStabilization());
         resetGyro = new JoystickButton(joystick, 2);
         resetGyro.whileHeld(new Reset());
