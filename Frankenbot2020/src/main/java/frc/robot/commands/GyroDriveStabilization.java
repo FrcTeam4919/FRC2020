@@ -1,5 +1,7 @@
 package frc.robot.commands;
+
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.OI;
 import frc.robot.Robot;
 import frc.robot.subsystems.Drivetrain;
 
@@ -32,11 +34,12 @@ public class GyroDriveStabilization extends Command {
     protected void execute() {
         double turningValue = (Drivetrain.kAngleSetpoint - Robot.imu.getAngle()) * Drivetrain.kP;
         // Invert the direction of the turn if we are going backwards
-        double Yvalue = Drivetrain.Joystick.getY();
+        double Yvalue = OI.joystick.getY();
         System.out.println(Yvalue);
-		turningValue = Math.copySign(turningValue, Drivetrain.Joystick.getY());
-        Drivetrain.westCoastTankDrive.arcadeDrive(Drivetrain.Joystick.getY(), turningValue);
+		turningValue = Math.copySign(turningValue, OI.joystick.getY());
+        Drivetrain.westCoastTankDrive.arcadeDrive(OI.joystick.getY(), turningValue);
         //double error = -Robot.imu.getRate();
+        
 
         //Drivetrain.westCoastTankDrive.arcadeDrive(.5 + Drivetrain.kP * error, .5 - Drivetrain.kP * error);
     }
@@ -50,6 +53,7 @@ public class GyroDriveStabilization extends Command {
     // Called once after isFinished returns true
     @Override
     protected void end() {
+        
     }
 
     // Called when another command which requires one or more of the same
