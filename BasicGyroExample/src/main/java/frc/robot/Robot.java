@@ -7,10 +7,12 @@
 
 package frc.robot;
 
+import com.analog.adis16448.frc.ADIS16448_IMU;
+
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.PWMVictorSPX;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 /**
@@ -28,18 +30,19 @@ public class Robot extends TimedRobot {
 
   private static final int kLeftMotorPort = 0;
   private static final int kRightMotorPort = 1;
-  private static final int kGyroPort = 0;
-  private static final int kJoystickPort = 0;
+  private static final int kJoystickPort = 1;
 
   private final DifferentialDrive m_myRobot
-      = new DifferentialDrive(new PWMVictorSPX(kLeftMotorPort),
-      new PWMVictorSPX(kRightMotorPort));
-  private final AnalogGyro m_gyro = new AnalogGyro(kGyroPort);
+      = new DifferentialDrive(new VictorSP(kLeftMotorPort),
+      new VictorSP(kRightMotorPort));
+  private final ADIS16448_IMU m_gyro = new ADIS16448_IMU();
   private final Joystick m_joystick = new Joystick(kJoystickPort);
 
   @Override
   public void robotInit() {
-    m_gyro.setSensitivity(kVoltsPerDegreePerSecond);
+    // m_gyro.setSensitivity(kVoltsPerDegreePerSecond);
+    m_gyro.reset();
+    m_gyro.calibrate();
   }
 
   /**
