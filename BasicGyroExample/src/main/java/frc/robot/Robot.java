@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj.buttons.*;
+
 
 /**
  * This is a sample program to demonstrate how to use a gyro sensor to make a
@@ -23,7 +25,9 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public class Robot extends TimedRobot {
   private static final double kAngleSetpoint = 0.0;
   private static final double kP = 0.005; // propotional turning constant
-
+  public JoystickButton gyroDrive;
+  public boolean EnableGyro = false;
+  
   // gyro calibration constant, may need to be adjusted;
   // gyro value of 360 is set to correspond to one full revolution
   private static final double kVoltsPerDegreePerSecond = 0.0128;
@@ -31,18 +35,19 @@ public class Robot extends TimedRobot {
   private static final int kLeftMotorPort = 0;
   private static final int kRightMotorPort = 1;
   private static final int kJoystickPort = 1;
-
   private final DifferentialDrive m_myRobot
       = new DifferentialDrive(new VictorSP(kLeftMotorPort),
       new VictorSP(kRightMotorPort));
   private final ADIS16448_IMU m_gyro = new ADIS16448_IMU();
   private final Joystick m_joystick = new Joystick(kJoystickPort);
 
+
   @Override
   public void robotInit() {
     // m_gyro.setSensitivity(kVoltsPerDegreePerSecond);
     m_gyro.reset();
     m_gyro.calibrate();
+    gyroDrive = new JoystickButton(m_joystick, 1);
   }
 
   /**
@@ -51,9 +56,15 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    /*if(gyroDrive.get()){
     double turningValue = (kAngleSetpoint - m_gyro.getAngle()) * kP;
     // Invert the direction of the turn if we are going backwards
     turningValue = Math.copySign(turningValue, m_joystick.getY());
+    
     m_myRobot.arcadeDrive(m_joystick.getY(), turningValue);
-  }
+  } else {
+    m_myRobot.arcadeDrive(m_joystick.getY(),m_joystick.getX());
+
+  }*/
+}
 }
