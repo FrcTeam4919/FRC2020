@@ -90,7 +90,7 @@ public static final double kAngleSetpoint = 0.0;
         //System.out.println("Driving the Joystick");
 
         //drivetrain.westCoastTankDrive.arcadeDrive(.5 + kP * error, .5 - kP * error);
-        System.out.println("POV Value: " + POVvalue);
+        /*System.out.println("POV Value: " + POVvalue);
         if (POVvalue == 90){
             westCoastTankDrive.arcadeDrive(0, 0.25);
         } else if (POVvalue == 180){
@@ -99,7 +99,7 @@ public static final double kAngleSetpoint = 0.0;
             westCoastTankDrive.arcadeDrive(0, -0.25);
         } else if (POVvalue == 0){
             westCoastTankDrive.arcadeDrive(0.25, 0);
-        }
+        }*/
     westCoastTankDrive.arcadeDrive(x, -y);
         
     }
