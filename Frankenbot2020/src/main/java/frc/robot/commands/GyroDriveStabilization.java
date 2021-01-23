@@ -1,4 +1,4 @@
-package frc.robot.commands;
+/*package frc.robot.commands;
 
 
 
@@ -44,17 +44,17 @@ public class GyroDriveStabilization extends Command {
                 }
 
 
-        /* 
-        double turningValue = (Drivetrain.kAngleSetpoint - Robot.imu.getAngle()) * Drivetrain.kP;
-        System.out.println("Turning Value: " + turningValue);
+        
+        //double turningValue = (Drivetrain.kAngleSetpoint - Robot.imu.getAngle()) * Drivetrain.kP;
+        //System.out.println("Turning Value: " + turningValue);
         // Invert the direction of the turn if we are going backwards
-        double Yvalue = OI.joystick.getY();
-        System.out.println("Joystick Value: " + Yvalue);
-        turningValue = Math.copySign(turningValue, Yvalue);
-        System.out.println("Turning Value Copysign: " + turningValue);
-        Drivetrain.westCoastTankDrive.arcadeDrive(OI.joystick.getX(), turningValue);
+        //double Yvalue = OI.joystick.getY();
+        //System.out.println("Joystick Value: " + Yvalue);
+        //turningValue = Math.copySign(turningValue, Yvalue);
+        //System.out.println("Turning Value Copysign: " + turningValue);
+        //Drivetrain.westCoastTankDrive.arcadeDrive(OI.joystick.getX(), turningValue);
         //double error = -Robot.imu.getRate();    
-        */
+        
     }
     // Make this return true when this Command no longer needs to run execute()
     @Override
@@ -74,3 +74,4 @@ public class GyroDriveStabilization extends Command {
     protected void interrupted() {
     }
 }
+*/

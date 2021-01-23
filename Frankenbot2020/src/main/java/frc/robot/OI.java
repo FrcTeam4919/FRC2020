@@ -12,8 +12,8 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.AutonomousCommand;
-import frc.robot.commands.GyroDriveStabilization;
-import frc.robot.commands.Reset;
+//import frc.robot.commands.GyroDriveStabilization;
+//import frc.robot.commands.Reset;
 import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.*;
@@ -66,9 +66,9 @@ public class OI {
         AaronsJoystick = new Joystick(0);
         
         gyroStabilization = new JoystickButton(joystick, 1);
-        gyroStabilization.whileHeld(new GyroDriveStabilization());
+        //gyroStabilization.whileHeld(new GyroDriveStabilization());
         resetGyro = new JoystickButton(joystick, 2);
-        resetGyro.whileHeld(new Reset());
+        //resetGyro.whileHeld(new Reset());
         ShiftForward = new JoystickButton(AaronsJoystick, 8);
         ShiftForward.whileHeld(new ShiftForward());
         ShiftBackward = new JoystickButton(AaronsJoystick, 15);
