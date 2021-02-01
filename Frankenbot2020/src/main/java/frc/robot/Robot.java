@@ -174,7 +174,7 @@ public class Robot extends TimedRobot {
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
         if(Drivetrain.encoder.getDistance() < 5){
-            Drivetrain.encoderM.set(1.0);
+            Drivetrain.encoderM.set(0.1);
         } else {
             Drivetrain.encoderM.set(0.0);
         }
