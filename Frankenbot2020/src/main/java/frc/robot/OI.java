@@ -54,6 +54,7 @@ public class OI {
     public JoystickButton ShiftBackward;
     public JoystickButton ShiftLeft;
     public JoystickButton ShiftRight;
+    public JoystickButton LimelightSeek;
 
     public static Joystick joystick;
     public static Joystick AaronsJoystick;
@@ -77,6 +78,8 @@ public class OI {
         ShiftLeft.whileHeld(new ShiftLeft());
         ShiftRight = new JoystickButton(AaronsJoystick, 6);
         ShiftRight.whileHeld(new ShiftRight());
+        LimelightSeek = new JoystickButton(AaronsJoystick, 9);
+        LimelightSeek.whileHeld(new limelightSeek());
         
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
