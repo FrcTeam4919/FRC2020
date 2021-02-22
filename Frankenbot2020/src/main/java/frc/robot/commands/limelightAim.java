@@ -4,12 +4,19 @@ import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.*;
 
-public class limelightSeek extends Command {
-    double kp = -0.1f;
+public class limelightAim extends Command {
+    static double kp = -0.1f;
     double min_command = 0.05f;
     double tx = Limelight.tx.getDouble(0.0);
     double y = OI.joystick.getY();
     double x = OI.joystick.getX();
+
+    public limelightAim() {
+        
+    }
+    protected void initialize(){
+        System.out.println("Aiming");
+    }
 
     protected void execute(){
         double heading_error = -tx;
