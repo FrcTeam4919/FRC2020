@@ -28,6 +28,8 @@ public final class Main {
    * <p>If you change your main robot class, change the parameter type.
    */
   public static void main(String... args) {
+    System.out.println("preTest");
     RobotBase.startRobot(Robot::new);
+    System.out.println("test");
   }
 }

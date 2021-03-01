@@ -78,10 +78,10 @@ public class OI {
         ShiftLeft.whileHeld(new ShiftLeft());
         ShiftRight = new JoystickButton(AaronsJoystick, 6);
         ShiftRight.whileHeld(new ShiftRight());
-        LimelightAim = new JoystickButton(AaronsJoystick, 1);
-        LimelightAim.whileHeld(new limelightAim());
-        LimelightSeek = new JoystickButton(AaronsJoystick, 4);
-        LimelightSeek.whileHeld(new limelightSeek());
+        //LimelightAim = new JoystickButton(AaronsJoystick, 1);
+        //LimelightAim.whileHeld(new limelightAim());
+        //LimelightSeek = new JoystickButton(AaronsJoystick, 4);
+        //LimelightSeek.whileHeld(new limelightSeek());
         
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());

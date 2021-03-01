@@ -106,7 +106,7 @@ public static Encoder encoder;
         } else if (POVvalue == 0){
             westCoastTankDrive.arcadeDrive(0.25, 0);
         }*/
-    westCoastTankDrive.arcadeDrive(x, -y);
+        westCoastTankDrive.arcadeDrive(x, -y);
         
     }
 
